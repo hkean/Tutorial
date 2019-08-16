@@ -37,7 +37,8 @@ public class InitSet {
 		}
 		System.out.println();
 		
-		
+		// get through toString toArray
+		System.out.println(Arrays.toString(asSet2.toArray()));
 	}
 
 }
