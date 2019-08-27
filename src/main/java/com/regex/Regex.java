@@ -1,12 +1,10 @@
-
+package com.regex;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
-
 	public static void main(String[] args) {
-		
 		String r = "(interface|class|abstract)\\s+(\\w*)\\s*";
 //		String r = "interface\\s+(\\w*)\\s*";
 //		String r = "(interface|class)";
@@ -31,6 +29,21 @@ public class Regex {
 //			System.out.println(matcher.end());
 //			System.out.println(matcher.);
 		}
+		
+		new Regex();
 	}
-
+	
+	Regex() {
+		String regex = "\\d+\\.\\d?";
+		String number = "12.12";
+		System.out.println(!number.matches(regex));
+		Double d = 12.1;
+		Double d2 = .1;
+		
+		System.out.println(d.toString().matches(regex));
+		System.out.println(d2 + " " + d2.toString().matches(regex));
+		
+		Integer d3 = 1;
+		System.out.println((double) d3);
+	}
 }
