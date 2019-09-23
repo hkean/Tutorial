@@ -39,6 +39,10 @@ public class InitSet {
 		
 		// get through toString toArray
 		System.out.println(Arrays.toString(asSet2.toArray()));
+		
+		System.out.println(asSet2.size());
+		asSet2.remove("a");
+		System.out.println(asSet2.size());
 	}
 
 }
