@@ -1,4 +1,4 @@
-package com.method.reference;
+package com.java8.method.reference;
 
 // https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html
 public class MethodReferenceMain {

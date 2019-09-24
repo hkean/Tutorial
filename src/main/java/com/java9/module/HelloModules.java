@@ -1,4 +1,4 @@
-package com.module.java9;
+package com.java9.module;
 
 // https://www.baeldung.com/java-9-modularity
 

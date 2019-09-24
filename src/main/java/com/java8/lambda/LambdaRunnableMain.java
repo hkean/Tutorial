@@ -1,4 +1,4 @@
-package com.lambda.java8;
+package com.java8.lambda;
 
 /*
  * In both cases, notice that no parameter is passed and is returned. 

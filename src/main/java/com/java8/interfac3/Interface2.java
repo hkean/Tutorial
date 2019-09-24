@@ -1,4 +1,4 @@
-package com.interfac3.java8;
+package com.java8.interfac3;
 
 public interface Interface2 {
 
