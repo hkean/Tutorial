@@ -69,7 +69,7 @@ public class StreamBaeldung {
 //		IntStream streamOfChars = "abc".chars();
 //		
 //		Stream<String> streamOfString =
-//				  Pattern.compile(", ").splitAsStream("a, b, c");
+//				Pattern.compile(", ").splitAsStream("a, b, c");
 //	}
 
 	void streamOfFile() {
