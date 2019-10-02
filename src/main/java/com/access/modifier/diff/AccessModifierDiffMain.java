@@ -4,6 +4,7 @@ package com.access.modifier.diff;
 import com.access.modifier.Protected1;
 import com.access.modifier.Public1;
 
+@SuppressWarnings("unused")
 public class AccessModifierDiffMain 
 extends Protected1
 //extends Default1 // constructor is not visible
@@ -13,12 +14,12 @@ extends Protected1
 		System.out.println(pub.strPublic);
 		pub.print();
 
-		AccessModifierDiffMain protect = new AccessModifierDiffMain();
-		System.out.println(protect.strProtected);
-		protect.print();
+		AccessModifierDiffMain thisClass = new AccessModifierDiffMain();
+		System.out.println(thisClass.strProtected);
+		thisClass.print();
 
-		// cannot instantiate through protected class
-//		Protected1 protect = new Protected1();
+		Protected1 protect = new Protected1();
+		// cannot use protected class
 //		System.out.println(protect.strProtected);
 //		protect.print();
 
