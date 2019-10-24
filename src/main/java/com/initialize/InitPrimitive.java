@@ -1,7 +1,10 @@
 package com.initialize;
 
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 public class InitPrimitive {
 
@@ -41,5 +44,18 @@ public class InitPrimitive {
 
 		// get through toString
 		System.out.println(Arrays.toString(arr));
+	}
+	
+	void Dat3() {
+		String pattern = "yyyy-MM-dd";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		
+		Date date = new Date();
+		System.out.println(simpleDateFormat.format(date));
+		
+		Calendar cal = Calendar.getInstance();
+		cal.set(2002, Calendar.JULY, 21, 12, 00, 01);
+		Date date2 = cal.getTime();
+		System.out.println(simpleDateFormat.format(date2));	
 	}
 }
