@@ -45,13 +45,10 @@ public class JsonDecode {
 			Map<String,Object> map = mapper.readValue(json, Map.class);
 			map.forEach((k,v)-> System.out.println(k + ":" + v));
 		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -60,7 +57,6 @@ public class JsonDecode {
 			JsonNode rootNode = mapper.readTree(json);
 			System.out.println(rootNode);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -69,7 +65,6 @@ public class JsonDecode {
 			JsonPlaceHolder obj = mapper.readValue(json, JsonPlaceHolder.class);
 			System.out.println(obj.toString());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
