@@ -11,7 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Demo implements Comparable<Demo> {
+public class Demo implements Comparable<Demo>, Cloneable {
 
 	public Integer id;
 	public String name;
@@ -21,7 +21,10 @@ public class Demo implements Comparable<Demo> {
 	public int compareTo(Demo d) {
 		return this.id - d.id;
 	}
-
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();	// return shallow copy
+	}
 	// a way to check all
 //	@Override
 //	public int compareTo(Demo d) {
