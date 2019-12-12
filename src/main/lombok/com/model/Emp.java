@@ -11,16 +11,16 @@ import com.google.common.base.MoreObjects;
 @Setter
 public class Emp {
 
-	private Byte a;
-	private Integer b;
-	private Long id;
+	private Byte refPosition;
+	private Integer numSalary;
+	private Long empId;
 
 	@Override
 	public int hashCode() {
-		if (null != this.id)
-			return Objects.hash(this.id);
+		if (null != this.empId)
+			return Objects.hash(this.empId);
 
-		return Objects.hash(this.id, this.a, this.b);
+		return Objects.hash(this.empId, this.refPosition, this.numSalary);
 	}
 
 	@Override
@@ -41,6 +41,8 @@ public class Emp {
 
 	@Override
 	public String toString() {
-		return MoreObjects.toStringHelper(this).add("id", this.id).add("a", this.a).add("b", this.b).toString();
+		return MoreObjects.toStringHelper(this).add("empId", this.empId).add("refPosition", this.refPosition)
+				.add("numSalary", this.numSalary).toString();
 	}
+
 }
