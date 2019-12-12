@@ -43,6 +43,8 @@ public class InitSet {
 		System.out.println(asSet2.size());
 		asSet2.remove("a");
 		System.out.println(asSet2.size());
+		
+		asSet3.forEach(System.out::print);
 	}
 
 }

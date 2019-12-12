@@ -23,22 +23,22 @@ public class HashCodeEqualMain {
 	
 	public void EmpTest() {
 		Emp a = new Emp();
-		a.setId(1L);
+		a.setEmpId(1L);
 		Emp b = new Emp();
-		b.setId(2L);
+		b.setEmpId(2L);
 		System.out.println(a.equals(b));
 		
-		b.setId(1L);
+		b.setEmpId(1L);
 		System.out.println(a.equals(b));
 		
-		b.setA((byte) 1);
+		b.setRefPosition((byte) 1);
 		System.out.println(a.equals(b));
 		
-		a.setId(null);
+		a.setEmpId(null);
 		System.out.println(a.equals(b));
 		
-		b.setId(null);
-		b.setA(null);
+		b.setEmpId(null);
+		b.setRefPosition(null);
 		System.out.println(a.equals(b));
 		
 		//toString
