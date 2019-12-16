@@ -1,11 +1,13 @@
 package com.java8.interfac3;
 
 public interface Interface2 {
+	public void square(int a);
 
-	void method2();
-
-	default void log(String str) {
-		System.out.println("I2 logging::" + str);
+	default void show() {
+		System.out.println("Default Method Executed");
 	}
 
+	default Integer getInt() {
+		return 0;
+	}
 }

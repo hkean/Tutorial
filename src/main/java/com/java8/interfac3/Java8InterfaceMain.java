@@ -2,7 +2,8 @@ package com.java8.interfac3;
 
 // https://www.geeksforgeeks.org/default-methods-java/
 
-public class Java8InterfaceMain implements Interface1 {
+public class Java8InterfaceMain implements Interface1, Interface2 {
+	// , Interface3 { // Compile error: Duplicate default methods
 
 	// Implementation of square abstract method
 	public void square(int a) {
@@ -15,5 +16,11 @@ public class Java8InterfaceMain implements Interface1 {
 
 		// Static method executed
 		Interface1.show();
+
+//		Interface1.setInt(1);
+		System.out.println(Interface1.getInt());
+
+		d.show();
+		System.out.println(d.getInt());
 	}
 }
