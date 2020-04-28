@@ -1,10 +1,15 @@
 package com.sort;
 
+import com.sort.Util.SORT;
+
+// bubble & insertion is the simplest algo
+// quick & merge is advance algo 
+
 // http://www.java2novice.com/java-sorting-algorithms/
 public class SortMain {
 	public static void main(String[] args) {
 		int[] input = { 4, 2, 9, 6, 23, 12, 34, 0, 1 };
-		BubbleSort.bubble_srt(input);
+		BubbleSort.bubble(input, SORT.ASC);
 
 		int[] arr1 = { 10, 34, 2, 56, 7, 67, 88, 42 };
 		int[] arr2 = SelectionSort.doSelectionSort(arr1);
@@ -14,7 +19,7 @@ public class SortMain {
 		}
 
 		int[] arr3 = { 10, 34, 2, 56, 7, 67, 88, 42 };
-		int[] arr4 = InsertionSort.doInsertionSort(arr3);
+		int[] arr4 = InsertionSort.insertion(arr3, SORT.DESC);
 		for (int i : arr4) {
 			System.out.print(i);
 			System.out.print(", ");

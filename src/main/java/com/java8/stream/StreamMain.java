@@ -61,4 +61,19 @@ public class StreamMain {
 		result.forEach(System.out::println);
 	}
 
+	// "convert" into another object using map
+	void testObjectToAnotherObject() {
+		listDemo.stream()
+			.map(tmp -> {
+				Demo d = new Demo();
+				d.setId(tmp.getId());
+				return d;
+			});
+	}
+	
+	// filter specific logic
+	void testFilter() {
+		listDemo.stream()
+			.filter(tmp -> 1 == tmp.getId() && "a" == tmp.getName());
+	}
 }

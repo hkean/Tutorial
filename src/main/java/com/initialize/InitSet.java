@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -20,6 +21,9 @@ public class InitSet {
 		Set<String> asSet4 = Collections.unmodifiableSet(new HashSet<String>(Arrays.asList("a", "b", "c", "d")));
 
 		Set<String> asSet5 = Stream.of("a", "b", "c", "d", "e").collect(Collectors.toSet());
+
+//		Set<String> asSet6 = 
+				Stream.of("a", "b", "c", "d", "e").collect(Collectors.toCollection(LinkedHashSet::new));
 				
 		System.out.println(//asSet1 + "" + 
 				asSet2 + "" + asSet3 + "" + asSet4 + "" + asSet5);
