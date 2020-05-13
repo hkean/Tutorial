@@ -13,6 +13,7 @@ Conventions Used in Source code
 	5. All JDialog components start with jdlg*
 	6. All JButton components start with jbn*
 */
+package com.github.tutorial.incomplete;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

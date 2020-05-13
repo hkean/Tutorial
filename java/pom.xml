@@ -2,22 +2,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.github.tutorial</groupId>
-	<artifactId>java</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<parent>
+		<groupId>com.github.tutorial</groupId>
+		<artifactId>tutorial</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<compiler.version>1.8</compiler.version>
-		<com.fasterxml.jackson.core.version>2.11.0</com.fasterxml.jackson.core.version>
-		<com.google.guava.version>29.0-jre</com.google.guava.version>
-		<javax.validation.version>2.0.1.Final</javax.validation.version>
-		<log4j.version>1.2.17</log4j.version>
-		<org.apache.logging.log4j.version>2.13.2</org.apache.logging.log4j.version>
-		<org.json.version>20190722</org.json.version>
-	</properties>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>java</artifactId>
+	<name>Tutorial Java</name>
 
 	<dependencies>
 		<dependency>
@@ -26,51 +19,44 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>${com.fasterxml.jackson.core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>${com.google.guava.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${com.fasterxml.jackson.core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>${javax.validation.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-web</artifactId>
-			<version>${org.apache.logging.log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>${org.json.version}</version>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<source>${compiler.version}</source>
-					<target>${compiler.version}</target>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
