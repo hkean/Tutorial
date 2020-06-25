@@ -1,0 +1,64 @@
+<ADocument>
+    <Stuff>
+        <StuffA></StuffA>
+    </Stuff>
+    <OtherStuff>
+        <OtherStuff>
+            <ABC>yada yada</ABC>
+        </OtherStuff>
+    </OtherStuff>
+
+    <Person>
+		<height>11.111111111111</height>
+		<weight>88</weight>
+        <bmi>11.111111111111</bmi>
+        <firstName>Some</firstName>
+        <lastName>Person</lastName>
+        <personID>111111111111</personID>
+    </Person>
+    <Person>
+		<height>22222222.222222222222</height>
+		<weight>120</weight>
+        <bmi>22222222.222222222222</bmi>
+        <firstName>Another Person</firstName>
+        <address>Main St. 2</address>
+        <personID>222222222222</personID>
+    </Person>
+    <Person>
+		<height>3333.333333333333</height>
+		<weight>33</weight>
+        <bmi>3333.333333333333</bmi>
+        <firstName>Some</firstName>
+        <lastName>Person</lastName>
+        <personID>111111111111</personID>
+    </Person>
+    <Person>
+		<height>3333.3333333.33333</height>
+		<weight>22</weight>
+        <bmi>3333.3333333.33333</bmi>
+        <firstName>Some</firstName>
+        <lastName>Person</lastName>
+        <personID>111111111111</personID>
+    </Person>
+    <Person>
+		<height>1.5</height>
+		<weight>40</weight>
+        <bmi>3333.3333333.33333</bmi>
+        <firstName>Some</firstName>
+        <lastName>Person</lastName>
+        <personID>111111111111</personID>
+    </Person>
+
+    <MoreStuff>
+        <foo></foo>
+        <foo>fooo</foo>
+        <foo><bar></bar></foo>
+        <foo>
+            <bar></bar>
+            <bar/>
+            <bar>bb</bar>
+        </foo>
+        <bar/>
+    </MoreStuff>
+
+</ADocument>
