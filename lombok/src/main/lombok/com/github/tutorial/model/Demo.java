@@ -1,8 +1,12 @@
 package com.github.tutorial.model;
 
+import java.util.Collection;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -10,20 +14,26 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
 @ToString
 public class Demo implements Comparable<Demo>, Cloneable {
 
+	@NonNull
 	public Integer id;
+	@NonNull
 	public String name;
+	@NonNull
 	Boolean active;
+	public Collection<Long> childs;
 
 	@Override
 	public int compareTo(Demo d) {
 		return this.id - d.id;
 	}
+
 	@Override
 	public Object clone() throws CloneNotSupportedException {
-		return super.clone();	// return shallow copy
+		return super.clone(); // return shallow copy
 	}
 	// a way to check all
 //	@Override

@@ -1,5 +1,7 @@
 package com.github.tutorial.pattern.builder;
 
+import com.github.tutorial.model.builder.Widget;
+
 // https://howtodoinjava.com/design-patterns/creational/builder-pattern-in-java/
 	
 public class BuilderMain {
@@ -26,5 +28,18 @@ public class BuilderMain {
 				.build();
 
 		System.out.println(user3);
+		
+		Widget widget1 = Widget.builder("New Name")
+				.id(1)
+				.build();
+		
+		System.out.println(widget1);
+		
+		Widget widget2 = Widget.builder("with singular")
+				.app("app1")
+				.app("app2")
+				.build();
+		
+		System.out.println(widget2);
 	}
 }
