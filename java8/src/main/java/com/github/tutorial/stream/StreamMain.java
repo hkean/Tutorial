@@ -1,20 +1,25 @@
 package com.github.tutorial.stream;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.github.tutorial.function.FunctionMain;
 import com.github.tutorial.model.Demo;
+import com.github.tutorial.model.Person;
 import com.google.common.base.Predicates;
 
 public class StreamMain {
 
+	Demo a = new Demo(1, "a", true);
+	Demo b = new Demo(2, "b", false);
+	Demo c = new Demo(3, "c", false);
 	List<String> listString = Arrays.asList("a", "b", "c");
-	List<Demo> listDemo = Arrays.asList(new Demo(1, "a", true), 
-										new Demo(2, "b", false), 
-										new Demo(3, "c", false));
+	List<Demo> listDemo = Arrays.asList(a, b, c);
+	List<Demo> listDemo2 = Arrays.asList(b);
 
 	public static void main(String[] args) {
 		new StreamMain();
@@ -63,17 +68,38 @@ public class StreamMain {
 
 	// "convert" into another object using map
 	void testObjectToAnotherObject() {
-		listDemo.stream()
+		List<Person> result = listDemo.stream()
 			.map(tmp -> {
-				Demo d = new Demo();
-				d.setId(tmp.getId());
-				return d;
-			});
+				Person p = new Person();
+				p.setName(tmp.getName());
+				return p;
+			}).collect(Collectors.toList());
+		result.forEach(System.out::println);
+		
+		List<Integer> result2 = listDemo.stream()
+				.map(tmp -> { return tmp.getId(); })
+				.collect(Collectors.toList());
+		result2.forEach(System.out::println);
 	}
 	
 	// filter specific logic
 	void testFilter() {
-		listDemo.stream()
-			.filter(tmp -> 1 == tmp.getId() && "a" == tmp.getName());
+		List<Demo> result = listDemo.stream()
+			.filter(tmp -> 1 == tmp.getId() && "a" == tmp.getName())
+			.collect(Collectors.toList());
+		result.forEach(System.out::println);
+		
+		Collection<Demo> result2 = listDemo.stream()
+				.filter(tmp -> !listDemo2.contains(tmp))
+				.collect(Collectors.toList());
+		result2.forEach(System.out::println);
+			
+		// use predicate
+		Predicate<Demo> predicate = input -> !listDemo2.stream().anyMatch(tmp -> input.equals(tmp));
+		Collection<Demo> result3 = listDemo.stream()
+				.filter(predicate)
+				.collect(Collectors.toList());
+		result3.forEach(System.out::println);
 	}
+	
 }
