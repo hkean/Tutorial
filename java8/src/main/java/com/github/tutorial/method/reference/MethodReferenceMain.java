@@ -1,6 +1,7 @@
 package com.github.tutorial.method.reference;
 
 // https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html
+// https://www.javatpoint.com/java-8-method-reference
 public class MethodReferenceMain {
 
 	public static void main(String[] args) {
