@@ -8,7 +8,9 @@ import java.time.Month;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.WeekFields;
 import java.util.Date;
+import java.util.Locale;
 
 // https://stackoverflow.com/questions/33066904/localdate-to-java-util-date-and-vice-versa-simplest-conversion
 
@@ -30,7 +32,7 @@ public class Java8Time {
 		LocalDate date2 = LocalDate.of(2002, Month.JULY, 21);
 		System.out.println(date2.format(dat));
 
-		LocalDate todayKolkata = LocalDate.now(ZoneId.of("Asia/Kolkata"));
+		LocalDate todayKolkata = LocalDate.now(ZoneId.of("Asia/Kolkata")); 
 		System.out.println("Current Date in IST=" + todayKolkata);
 
 		LocalDate hundredDay2014 = LocalDate.ofYearDay(2014, 100);
@@ -49,6 +51,10 @@ public class Java8Time {
 
 		Instant timestamp = Instant.now();
 		System.out.println("Current Timestamp = " + timestamp);
+
+		LocalDate date5 = LocalDate.of(2020, Month.DECEMBER, 2);
+		System.out.println("weekOfYear: " + date5.get(WeekFields.of(Locale.getDefault()).weekOfYear()));
+		System.out.println("getDayOfYear: " + date5.getDayOfYear());
 
 	}
 

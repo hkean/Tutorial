@@ -53,6 +53,10 @@ public class JavaTime {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		
+		Calendar calendar4 = Calendar.getInstance();
+		calendar4.set(2020, 0, 3);
+		System.out.println(calendar4.getTime() + " : " + calendar4.get(Calendar.WEEK_OF_YEAR));
 	}
 
 	// check in between
