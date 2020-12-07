@@ -18,12 +18,20 @@ public class JavaTime {
 
 		System.out.println("ft format date: " + ft.format(date));
 
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.set(Calendar.HOUR_OF_DAY, 23);
+		calendar.set(Calendar.MINUTE, 59);
+		calendar.set(Calendar.SECOND, 59);
+		calendar.set(Calendar.MILLISECOND, 999);
+		System.out.println("calendar: " + df.format(calendar.getTime()));
+		
 //		Date date2 = new Date(120, 0, 4);
 //		System.out.println("date2: " + date2);
 
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(2020, 0, 4, 00, 00, 00);
-		Date date3 = calendar.getTime();
+		Calendar calendar3 = Calendar.getInstance();
+		calendar3.set(2020, 0, 4, 00, 00, 00);
+		Date date3 = calendar3.getTime();
 		System.out.println("date3: " + date3);
 
 		LocalDate date4 = LocalDate.now();
