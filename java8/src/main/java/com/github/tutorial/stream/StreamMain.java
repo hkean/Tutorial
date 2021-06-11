@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import com.github.tutorial.function.FunctionMain;
@@ -100,6 +101,20 @@ public class StreamMain {
 				.filter(predicate)
 				.collect(Collectors.toList());
 		result3.forEach(System.out::println);
+	}
+	
+	// streams of primitive
+	// https://howtodoinjava.com/java8/convert-intstream-collection-array/
+	void testPrimitive() {
+		List<Integer> ints1 = IntStream.of(1,2,3,4,5)
+                .boxed()
+                .collect(Collectors.toList());
+		System.out.println(ints1);
+		
+		List<Integer> ints2 = IntStream.of(1,2,3,4,5)
+	            .mapToObj(Integer::valueOf)
+	            .collect(Collectors.toList());
+		System.out.println(ints2);
 	}
 	
 }

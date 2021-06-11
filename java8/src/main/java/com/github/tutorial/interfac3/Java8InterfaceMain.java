@@ -2,9 +2,15 @@ package com.github.tutorial.interfac3;
 
 // https://www.geeksforgeeks.org/default-methods-java/
 
-public class Java8InterfaceMain implements Interface1, Interface2 {
-	// , Interface3 { // Compile error: Duplicate default methods
+public class Java8InterfaceMain implements Interface1, Interface2
+	, Interface3 // Compile error: Duplicate default methods
+	{ 
 
+	@Override
+	public void show() { // Solve "compile error: duplicate default methods"
+		Interface2.super.show();
+	}
+	
 	// Implementation of square abstract method
 	public void square(int a) {
 		System.out.println(a * a);

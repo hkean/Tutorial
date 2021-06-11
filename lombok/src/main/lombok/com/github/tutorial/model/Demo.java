@@ -1,5 +1,6 @@
 package com.github.tutorial.model;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import lombok.AllArgsConstructor;
@@ -16,14 +17,19 @@ import lombok.ToString;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @ToString
-public class Demo implements Comparable<Demo>, Cloneable {
+public class Demo implements Comparable<Demo>, Cloneable, Serializable {
 
 	@NonNull
 	public Integer id;
+	
 	@NonNull
 	public String name;
+	
 	@NonNull
 	Boolean active;
+
+	boolean standardBoolean;
+	
 	public Collection<Long> childs;
 
 	@Override

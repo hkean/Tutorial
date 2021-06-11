@@ -28,7 +28,9 @@ public class InitPrimitive {
 
 	void Integer() {
 		int[] a = { 1, 2, 3 };
-		System.out.println(Arrays.toString(a));
+		int[] a2 = new int[] {1};
+		
+		System.out.println(Arrays.toString(a) + " " + a2);
 	}
 
 	void String() {

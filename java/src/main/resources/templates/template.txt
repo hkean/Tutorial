@@ -1,0 +1,63 @@
+// variables
+${title}
+
+// objects
+${exampleObject.name} by ${exampleObject.id}
+
+// list
+    <#list systems as system>
+      ${system_index + 1}. ${system.name} from ${system.id}
+    </#list>
+
+// template variables
+<#assign var_link = "https://www.vogella.com/people/larsvogel.html">
+
+${var_link}
+
+// if else 
+<#assign name = "${exampleObject.getName()}">
+
+<#if name? starts_with("name")>
+    <a href="http://www.learn.com</a>
+    <#else>
+    <a href="http://www.vogella.com/tutorials/${name}/article.html">${var_link}</a>
+</#if>
+
+// null 
+<!-- Acts like if the color was N/A if there's no color: -->
+<p>Color: ${color!'N/A'}</p>
+
+<!-- Avoid the whole color row if there's no color: -->
+<#if color??>
+  <p>Color: ${color}</p>
+</#if>
+
+Date in date format: ${date?date}
+Date in date format: ${date?date?string("ddMMyyyy")}
+Date time format: ${date?time}
+
+parse format into freemaker date: ${dateStr?date("dd/MM/yyyy")}
+<#-- parse str into customize date: ${dateStr?string("yyyy-MM-dd")} # err, and why format when it's a String from the start -->
+parse date into customize date: ${date?string("yyyy-MM-dd")}
+
+${d}
+${d?c}
+${d?string["####.00"]}
+${10002.5?string[",000;; roundingMode=halfUp groupingSeparator=_"]}
+${dWOdecimal}
+${dWOdecimal?string["0.##"]} <#-- can set from Configuration -->
+${m?string["0.00"]}
+
+${d?replace(".","")}
+
+<#assign cons = "ABC">
+${(cons + year?string["0"] + name)?right_pad(10,"0")}
+
+<#assign type = "right_pad(\"0\")">
+<#-- ${"100"?${type}} # cannot -->
+
+<#assign total = 100.10>
+<#-- assign total1 = "${total?string["0"]}" -->
+${total1!""} ${d*100} ${(d*100)?string} ${(d*100)?string["0"]}
+
+${text?right_pad(10)}

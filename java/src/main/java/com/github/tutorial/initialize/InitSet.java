@@ -23,31 +23,31 @@ public class InitSet {
 		Set<String> asSet5 = Stream.of("a", "b", "c", "d", "e").collect(Collectors.toSet());
 
 //		Set<String> asSet6 = 
-				Stream.of("a", "b", "c", "d", "e").collect(Collectors.toCollection(LinkedHashSet::new));
-				
-		System.out.println(//asSet1 + "" + 
+		Stream.of("a", "b", "c", "d", "e").collect(Collectors.toCollection(LinkedHashSet::new));
+
+		System.out.println(// asSet1 + "" +
 				asSet2 + "" + asSet3 + "" + asSet4 + "" + asSet5);
-		
+
 		// get through iterate
 		Iterator<String> i = asSet2.iterator();
 		while (i.hasNext()) {
 			System.out.print(i.next() + " ");
 		}
 		System.out.println();
-		
+
 		// get through loop
 		for (String temp : asSet2) {
 			System.out.print(temp + " ");
 		}
 		System.out.println();
-		
+
 		// get through toString toArray
 		System.out.println(Arrays.toString(asSet2.toArray()));
-		
+
 		System.out.println(asSet2.size());
 		asSet2.remove("a");
 		System.out.println(asSet2.size());
-		
+
 		asSet3.forEach(System.out::print);
 	}
 

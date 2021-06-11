@@ -8,11 +8,13 @@ import java.time.Month;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.IsoFields;
 import java.time.temporal.WeekFields;
 import java.util.Date;
 import java.util.Locale;
 
 // https://stackoverflow.com/questions/33066904/localdate-to-java-util-date-and-vice-versa-simplest-conversion
+// read basil answer -> https://stackoverflow.com/a/40143687/12056899
 
 public class Java8Time {
 
@@ -32,7 +34,7 @@ public class Java8Time {
 		LocalDate date2 = LocalDate.of(2002, Month.JULY, 21);
 		System.out.println(date2.format(dat));
 
-		LocalDate todayKolkata = LocalDate.now(ZoneId.of("Asia/Kolkata")); 
+		LocalDate todayKolkata = LocalDate.now(ZoneId.of("Asia/Kolkata"));
 		System.out.println("Current Date in IST=" + todayKolkata);
 
 		LocalDate hundredDay2014 = LocalDate.ofYearDay(2014, 100);
@@ -54,8 +56,16 @@ public class Java8Time {
 
 		LocalDate date5 = LocalDate.of(2020, Month.DECEMBER, 2);
 		System.out.println("weekOfYear: " + date5.get(WeekFields.of(Locale.getDefault()).weekOfYear()));
+		System.out.println("weekOfYear ISO: " + date5.get(IsoFields.WEEK_OF_WEEK_BASED_YEAR));
 		System.out.println("getDayOfYear: " + date5.getDayOfYear());
 
+		LocalDate date6 = LocalDate.now();
+		System.out.println("date6" + date6);
+		System.out.println("util date6: " + Date.from(date6.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		System.out.println("sql date6: " + java.sql.Date.valueOf(date6));
+
+		LocalDate date7 = LocalDate.of(2020, Month.MARCH, 28);
+		System.out.println(date7.lengthOfMonth() + " : " + date7.getDayOfMonth());
 	}
 
 	public int calculateYears(LocalDate birthDate, LocalDate currentDate) {
@@ -82,7 +92,34 @@ public class Java8Time {
 		}
 	}
 
+	public LocalDate convertToLocalDateViaInstant(Date dateToConvert) {
+		return dateToConvert.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+	}
+
+	public LocalDate convertToLocalDateViaMilisecond(Date dateToConvert) {
+		return Instant.ofEpochMilli(dateToConvert.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+	}
+
+	public LocalDate convertToLocalDateViaSqlDate(Date dateToConvert) {
+		return new java.sql.Date(dateToConvert.getTime()).toLocalDate();
+	}
+
+	public LocalDateTime convertToLocalDateTimeViaSqlTimestamp(Date dateToConvert) {
+		return new java.sql.Timestamp(dateToConvert.getTime()).toLocalDateTime();
+	}
+	
+	public Date convertToDateViaSqlDate(LocalDate dateToConvert) {
+	    return java.sql.Date.valueOf(dateToConvert);
+	}
+	
+	public Date convertToDateViaInstant(LocalDate dateToConvert) {
+	    return java.util.Date.from(dateToConvert.atStartOfDay()
+	      .atZone(ZoneId.systemDefault())
+	      .toInstant());
+	}
+	
 	public static void main(String[] args) {
 		new Java8Time();
 	}
+
 }
