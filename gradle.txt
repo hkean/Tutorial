@@ -1,9 +1,0 @@
-########
-#gradle#
-########
-
-#dependencies
-
-https://stackoverflow.com/questions/47365119/gradle-dependency-configuration-implementation-vs-api-vs-runtimeonly-vs-compil/47365147#47365147
-
-#
