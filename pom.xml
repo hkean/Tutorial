@@ -28,6 +28,13 @@
 		<freemarker-gae.version>2.3.30</freemarker-gae.version>
 		<commons-csv.version>1.8</commons-csv.version>
 	</properties>
+	
+	<modules>
+		<module>lombok</module>
+		<module>java</module>
+		<module>java8</module>
+		<module>java-magazine</module>
+	</modules>
 
 	<dependencyManagement>
 		<dependencies>
