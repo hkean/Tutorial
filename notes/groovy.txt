@@ -1,0 +1,17 @@
+#java vs groovy
+
++------------------------------------------------+------------------------+
+| public class Clazz {                           |                        |
+|   public static String greeting(String name) { | def greeting(name) {   |
+|     return "Hello " + name;                    |   "Hello $name"        |
+|   }                                            | }                      |
+|   public static void main(String[] args) {     |                        |
+|     String name = "Matt";                      | def name = "Matt"      |
+|     System.out.println(greeting(name));        | println greeting(name) |
+|   }                                            |                        |
+| }                                              |                        |
++------------------------------------------------+------------------------+
+
+#
+
+#

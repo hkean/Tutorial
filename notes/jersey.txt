@@ -1,0 +1,9 @@
+#spring boot jersey
+
+https://howtodoinjava.com/spring-boot/spring-boot-jersey-example/
+
+#filter and interceptor
+
+https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest/filters-and-interceptors.html
+
+#
