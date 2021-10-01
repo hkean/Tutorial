@@ -1,12 +1,6 @@
 package com.github.tutorial.time;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
-import java.time.Period;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.IsoFields;
 import java.time.temporal.WeekFields;
@@ -66,6 +60,8 @@ public class Java8Time {
 
 		LocalDate date7 = LocalDate.of(2020, Month.MARCH, 28);
 		System.out.println(date7.lengthOfMonth() + " : " + date7.getDayOfMonth());
+
+		OffsetDateTime offsetDateTime = OffsetDateTime.now();
 	}
 
 	public int calculateYears(LocalDate birthDate, LocalDate currentDate) {
